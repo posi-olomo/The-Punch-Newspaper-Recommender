@@ -5,6 +5,14 @@
 
 import pickle
 import streamlit as st
+import pandas as pd
+import numpy as np
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
+import tensorflow as tf
+from tensorflow import keras
+from keras.models import load_model
+import 
 
 c1, c2 = st.columns([0.32, 2])
 
@@ -48,14 +56,14 @@ c1, c2 = st.columns(2, gap ='large')
 if url:
 
     c1.header("Your URL is about:")
-        
-    """## Recommender"""
-    
-    import pandas as pd
-    from sklearn.feature_extraction.text import TfidfVectorizer
-    from sklearn.metrics.pairwise import cosine_similarity
-    
-    
+
+    # Load the saved model
+    model = load_model('model.h5')
+
+    # Labels that can be predicted
+    labels = [ 'News', 'Business',  'Metro Plus', 'General Health', 'Sport', 'Politics', 'Editorial']
+
+    # Read the data file    
     data = pd.read_excel('data/The Punch Cleaned File BackUp.xlsx')
     
     # Create the TfidfVectorizer Object
@@ -63,6 +71,13 @@ if url:
     
     # Create a matrix of word vectors
     tfidf_matrix = tfidf.fit_transform(data['CLEANED DATA'])
+
+    def predict(url, model, labels):
+        # Create a matrix of vectors for the url
+        tfidf_url = tfidf.transform(url)
+        
+
+    """## Recommender"""
     
     print(tfidf_matrix.toarray())
     
