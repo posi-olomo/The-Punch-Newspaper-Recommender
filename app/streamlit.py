@@ -14,7 +14,7 @@ st.set_page_config(layout="wide")
 
 col1, col2, col3 = st.columns((0.7, 2, 0.7))
 with col2:
-     st.image(Image.open("../images/The Punch logo.jpg"), width = 300) #use_container_width = True)
+     st.image(Image.open("images/The Punch logo.jpg"), width = 300) #use_container_width = True)
 
 st.markdown(("## THE PUNCH Newspaper Recommender App"))
 st.markdown("### *What PUNCH article should you read next?*")
