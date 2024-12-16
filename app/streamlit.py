@@ -3,29 +3,22 @@
 # Commented out IPython magic to ensure Python compatibility.
 # %%writefile app.py
 
-import pickle
 import streamlit as st
 import pandas as pd
 import numpy as np
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
-import tensorflow as tf
-from tensorflow import keras
-import tensorflow_hub as hub
-# from streamlit.locale import gettext as _
 from PIL import Image
-import base64
 
 st.set_page_config(layout="wide")
 
 col1, col2, col3 = st.columns((0.7, 2, 0.7))
 with col2:
-    st.image(Image.open("images/The Punch logo.jpg"), width = 300) #use_container_width = True)
+     st.image(Image.open("../images/The Punch logo.jpg"), width = 300) #use_container_width = True)
 
 st.markdown(("## THE PUNCH Newspaper Recommender App"))
 st.markdown("### *What PUNCH article should you read next?*")
-# st.text("Get a list of 10 newspaper articles similar to your last PUNCH article")
-# st.markdown(" #### Find related newspaper articles")
+
 st.markdown("""
 1. **Get Started:**
             
@@ -60,7 +53,22 @@ st.sidebar.write('')
 
 
 
-st.sidebar.image(Image.open("images/tired_jet_lag.gif"), width = 300)
+st.sidebar.image(Image.open("../images/tired_jet_lag.gif"), width = 300)
+st.sidebar.markdown(
+            """
+            <div style="text-align: center">
+                <div style="margin-top: -10px;">
+                    <a href="https://giphy.com/gifs/computer-tired-jAe22Ec5iICCk" 
+                    style="text-decoration: none; color: #2b7bba; font-size: 14px;" 
+                    target="_blank">
+                    Source: giphy.com
+                    </a>
+                </div>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
+
 st.sidebar.markdown("---")
 # Let's add some info about the app to the sidebar.
 
@@ -110,7 +118,7 @@ if url:
     col1, col2, col3 = st.columns((0.7, 2, 0.7))
 
     with col2:
-        st.image("images/muhammad-taha-ibrahim-SUYgiqO2wAE-unsplash.jpg")
+        st.image("../images/muhammad-taha-ibrahim-SUYgiqO2wAE-unsplash.jpg")
 
         st.markdown(
             """
@@ -135,7 +143,7 @@ if url:
         st.markdown(r"$\underline{\text{Your PUNCH article is about:}}$")
 
     # Read the data file    
-    data = pd.read_excel('data/The Punch Cleaned File BackUp.xlsx')
+    data = pd.read_excel('../data/The Punch Cleaned File BackUp.xlsx')
     
     tag = data[data["URL"]==url]["TAGS"]
 
