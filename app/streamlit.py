@@ -53,7 +53,7 @@ st.sidebar.write('')
 
 
 
-st.sidebar.image(Image.open("../images/tired_jet_lag.gif"), width = 300)
+st.sidebar.image(Image.open("images/tired_jet_lag.gif"), width = 300)
 st.sidebar.markdown(
             """
             <div style="text-align: center">
@@ -118,7 +118,7 @@ if url:
     col1, col2, col3 = st.columns((0.7, 2, 0.7))
 
     with col2:
-        st.image("../images/muhammad-taha-ibrahim-SUYgiqO2wAE-unsplash.jpg")
+        st.image("images/muhammad-taha-ibrahim-SUYgiqO2wAE-unsplash.jpg")
 
         st.markdown(
             """
