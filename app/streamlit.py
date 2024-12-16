@@ -143,7 +143,7 @@ if url:
         st.markdown(r"$\underline{\text{Your PUNCH article is about:}}$")
 
     # Read the data file    
-    data = pd.read_excel('../data/The Punch Cleaned File BackUp.xlsx')
+    data = pd.read_excel('data/The Punch Cleaned File BackUp.xlsx')
     
     tag = data[data["URL"]==url]["TAGS"]
 
