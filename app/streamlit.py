@@ -33,7 +33,7 @@ st.markdown("""
 
 3. **Next Step:**
             
-    Paste the URL you selected into the search bar below to view the top 10 recommended newspaper articles tailors for you
+    Paste the URL you selected into the search bar below to view the top 10 recommended newspaper articles tailored to you
             """)
 
 # We create a text input field for users to enter the link to their last PUNCH article.
